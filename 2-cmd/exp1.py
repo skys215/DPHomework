@@ -5,14 +5,22 @@ class Light:
 	def off(self):
 		print 'Light\'s off'
 
-class LightsOnCommand:
+class Commands:
+	def __init__(self):
+		pass
+	
+	def execute(self):
+		pass
+	
+
+class LightsOnCommand(Commands):
 	def __init__(self,light):
 		self.light=light
 	
 	def execute(self):
 		self.light.on()
 
-class LightsOffCommand:
+class LightsOffCommand(Commands):
 	def __init__(self, light):
 		self.light=light
 
