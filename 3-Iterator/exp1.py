@@ -1,4 +1,30 @@
+class Aggregate:
+	def __init__(self, itrObj):
+		self.itrObj=itrObj	
+	
+	def createIterator(self):
+		pass
+	
+
+class ListAggregate(Aggregate):
+	def createIterator(self):
+		return ListIterator(self.itrObj)
+
 class Iterator:
+	def __init__(self,itr):
+		pass
+	def first(self):
+		pass
+	def next(self):
+		pass
+	def hasNext(self):
+		pass
+	def currentItem(self):
+		pass
+	
+
+
+class ListIterator:
 	def __init__(self, itr):
 		self.itrObject = itr
 		self.currentPosition = 0
@@ -17,7 +43,8 @@ class Iterator:
 		return self.itrObject[self.currentPosition]
 	
 l=['a','b','c']
-itrList = Iterator(l)
+lAgg = ListAggregate(l)
+itrList = lAgg.createIterator()
 
 itrList.next()
 print itrList.currentItem()
